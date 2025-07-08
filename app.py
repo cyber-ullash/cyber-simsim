@@ -3,12 +3,19 @@ import httpx
 
 app = FastAPI()
 
-UPSTREAM_API = "http://3.137.183.148:3000"  # <-- replace with the real target API
+ULLASH_API = "আব্বু ডাক ENDPOINT দিবো"  # <-- replace with the real target API
 
 @app.api_route("/{path:path}", methods=["GET", "POST"])
 async def mask_api(path: str, request: Request):
     async with httpx.AsyncClient() as client:
-        upstream_url = f"{UPSTREAM_API}/{path}"
+        upstream_url = f"{ULLASH_API}/{path}"
+
+██╗░░░██╗██╗░░░░░██╗░░░░░░█████╗░░██████╗██╗░░██╗
+██║░░░██║██║░░░░░██║░░░░░██╔══██╗██╔════╝██║░░██║
+██║░░░██║██║░░░░░██║░░░░░███████║╚█████╗░███████║।        Ullash ッ
+██║░░░██║██║░░░░░██║░░░░░██╔══██║░╚═══██╗██╔══██║
+╚██████╔╝███████╗███████╗██║░░██║██████╔╝██║░░██║
+
         
         # Forward headers except host, user-agent for minimal trace
         headers = {k: v for k, v in request.headers.items() if k.lower() not in ["host", "user-agent"]}
@@ -31,3 +38,8 @@ async def mask_api(path: str, request: Request):
             status_code=upstream_response.status_code,
             media_type=upstream_response.headers.get("content-type")
         )
+██╗░░░██╗██╗░░░░░██╗░░░░░░█████╗░░██████╗██╗░░██╗
+██║░░░██║██║░░░░░██║░░░░░██╔══██╗██╔════╝██║░░██║
+██║░░░██║██║░░░░░██║░░░░░███████║╚█████╗░███████║
+██║░░░██║██║░░░░░██║░░░░░██╔══██║░╚═══██╗██╔══██║
+╚██████╔╝███████╗███████╗██║░░██║██████╔╝██║░░██║
