@@ -3,7 +3,7 @@ import httpx
 
 app = FastAPI()
 
-ULLASH_API = "আব্বু ডাক ENDPOINT দিবো"  # <-- replace with the real target API
+ULLASH_API = "আব্বু ডাক ENDPOINT দিবো"  #হেইটারসদের আম্মু কে গন*ধর্ষ√ণ করি\∆ ধন্যবাদ 🫰🏾 🫶🏾 
 
 @app.api_route("/{path:path}", methods=["GET", "POST"])
 async def mask_api(path: str, request: Request):
